@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 class LombokTest {
 	private String name;
 	private String id;
+	private int age;
 	
     
     void testLog() {
