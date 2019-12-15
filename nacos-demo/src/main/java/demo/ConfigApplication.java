@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ import com.alibaba.nacos.spring.context.annotation.config.EnableNacosConfig;
 @ComponentScan(basePackages="demo")
 @RequestMapping("config")
 @EnableNacosConfig
+//@RefreshScope
 //@EnableNacos(globalProperties = @NacosProperties(serverAddr = "127.0.0.1:8848"))
 public class ConfigApplication {
 	static {
@@ -34,6 +36,18 @@ public class ConfigApplication {
 	@NacosValue(value = "${a}", autoRefreshed = true)
 	private String a;
 	
+	
+	@Value(value = "${b}")
+	private String b;
+	
+	public String getB() {
+		return b;
+	}
+
+	public void setB(String b) {
+		this.b = b;
+	}
+
 	@Autowired
 	private MyConf conf;
 
@@ -47,5 +61,11 @@ public class ConfigApplication {
     @ResponseBody
 	public String get2() {
 		return  conf.getName();
+	}
+ 	
+ 	@RequestMapping(value = "/get3", method = RequestMethod.GET)
+    @ResponseBody
+	public String get3() {
+		return b;
 	}
 }
