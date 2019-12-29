@@ -9,6 +9,8 @@ import com.alibaba.nacos.api.config.ConfigService;
 import com.alibaba.nacos.api.config.listener.Listener;
 import com.alibaba.nacos.api.exception.NacosException;
 
+import static com.alibaba.nacos.api.NacosFactory.*;
+
 public class Snippet {
 	public static void main(String[] args) throws IOException {
 		// 连接到目标服务的地址
@@ -20,7 +22,7 @@ public class Snippet {
 		properties.put("serverAddr", serverAddr);
 		try {
 			// ConfigService-> NacosConfigService
-			ConfigService configService = NacosFactory.createConfigService(properties);
+			ConfigService configService = createConfigService(properties);
 			String content = configService.getConfig(dataId, groupId, 3000);
 			System.out.println(content);
 			configService.addListener(dataId, groupId, new Listener() {

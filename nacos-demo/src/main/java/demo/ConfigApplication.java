@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +19,7 @@ import com.alibaba.nacos.spring.context.annotation.config.EnableNacosConfig;
 @ComponentScan(basePackages="demo")
 @RequestMapping("config")
 @EnableNacosConfig
-//@RefreshScope
+@RefreshScope
 //@EnableNacos(globalProperties = @NacosProperties(serverAddr = "127.0.0.1:8848"))
 public class ConfigApplication {
 	static {
