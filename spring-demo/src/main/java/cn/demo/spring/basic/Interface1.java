@@ -1,4 +1,4 @@
-package demo.springcloud.basic;
+package cn.demo.spring.basic;
 
 public interface Interface1 {
 }

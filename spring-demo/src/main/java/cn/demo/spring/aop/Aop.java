@@ -1,4 +1,4 @@
-package demo.springcloud.aop;
+package cn.demo.spring.aop;
 
 
 import org.aspectj.lang.JoinPoint;

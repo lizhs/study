@@ -1,4 +1,4 @@
-package demo.springcloud.basic;
+package cn.demo.spring.basic;
 
 import org.springframework.stereotype.Component;
 
