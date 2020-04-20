@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: app
+          uri: http://www.baidu.com
+          predicates:
+            - Path=/app/**
+          filters:
+            - StripPrefix=1

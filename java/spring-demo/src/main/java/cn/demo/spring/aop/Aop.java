@@ -15,7 +15,7 @@ import java.util.List;
 public class Aop {
 
 	@Pointcut("execution(* cn.demo.spring.aop.A.send(..))")
-    public void send() {
+    public void send() { 
         System.out.println("send..");
     }
 
