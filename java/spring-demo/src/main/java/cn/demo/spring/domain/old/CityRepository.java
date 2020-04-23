@@ -1,3 +1,4 @@
+package cn.demo.spring.domain.old;
 //package cn.demo.spring.domain;
 //
 //import org.springframework.data.domain.Page;
